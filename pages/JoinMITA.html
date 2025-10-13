@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome 图标字体库 -->
+    <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
+    <title>MITA | 加入 MITA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #333;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+            z-index: -1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .logo-icon span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav li {
+            margin-left: 25px;
+        }
+        nav ul li:nth-last-child(2),
+        nav ul li:nth-last-child(3),
+        nav ul li:nth-last-child(4),
+        nav ul li:nth-last-child(5) {
+            margin-left: 10px;
+        }
+        nav a {
+            color: #2c4a7a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+        nav a:hover {
+            color: #1a2c4e;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #4a6bac, #2c4a7a);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .current {
+            color: #1a2c4e;
+        }
+        .current::after {
+            width: 100%;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 150%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 100;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            color: #2c4a7a;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-content a:hover {
+            background: #f5f7fa;
+            color: #1a2c4e;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+        .main-title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: #2c4a7a;
+        }
+        .main-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+        .join-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 30px;
+        }
+        .join-card {
+            background: rgba(255, 255, 255, 0);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+        .join-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .join-icon {
+            color: #2c4a7a;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            background: rgba(74, 107, 172, 0.1);
+        }
+        .join-title {
+            color: #2c4a7a;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .join-desc {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 10px 0 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .qr-code:hover {
+            transform: scale(1.05);
+        }
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .join-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #4a6bac, #2c4a7a);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(42, 74, 138, 0.3);
+            margin-top: 10px;
+        }
+        .join-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(42, 74, 138, 0.4);
+            background: linear-gradient(45deg, #3c5a94, #1a2c4e);
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            .logo {
+                margin-bottom: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav li {
+                margin: 0 10px 10px;
+            }
+            .main-title {
+                font-size: 2.5rem;
+            }
+            .join-options {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .join-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/MITA-2025/MITA_Management_Manual/refs/heads/main/MITA%20Logo%EF%BC%88%E5%8E%8B%E7%BC%A9%E7%89%88%EF%BC%89.png" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <h1 style="color: #2c4a7a; font-size: 1.5rem;">数学与智能科技协会</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-home"></i>&nbsp;&nbsp;主页</a></li>
+                    <li><a href="社团介绍.html"><i class="fa-solid fa-info"></i>&nbsp;&nbsp;社团介绍</a></li>
+                    <li><a href="项目资源.html"><i class="fa-regular fa-folder-closed"></i>&nbsp;&nbsp;项目资源</a></li>
+                    <li><a href="#" class="current"><i class="fa-brands fa-qq"></i>&nbsp;&nbsp;加入MITA</a></li>
+                    <li><a href="邮箱信息.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="微信公众号信息.html"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://space.bilibili.com/3546981368596533?spm_id_from=333.337.0.0"><i class="fa-brands fa-bilibili"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-zhihu"></i></a></li>
+                    <li class="dropdown">
+                        <a href="#">更多 <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="组织架构.html"><i class="fa-solid fa-network-wired"></i>&nbsp;&nbsp;组织架构</a>
+                            <a href="管理文档.html"><i class="fa-solid fa-landmark"></i>&nbsp;&nbsp;管理文档</a>
+                            <a href="许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&nbsp;&nbsp;许可协议</a>
+                            <a href="JoinMITA.html"><i class="fa-solid fa-language"></i>&nbsp;&nbsp;English</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-content">
+            <h1 class="main-title">加入MITA</h1>
+            <p class="main-subtitle">开启您的数学探索之旅</p>
+            <div class="join-options">
+                <div class="join-card">
+                    <div class="join-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    <h3 class="join-title">加入社团</h3>
+                    <p class="join-desc">成为MITA会员，参与精彩活动和项目</p>
+                    <a href="https://wj.qq.com/s2/24287898/096f/" class="join-button">
+                        <i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;填写入社问卷
+                    </a>
+                </div>
+                <div class="join-card">
+                    <div class="join-icon"><i class="fa-brands fa-qq"></i></div>
+                    <h3 class="join-title">加入QQ交流群</h3>
+                    <p class="join-desc">加入MITA社团总群，获取最新资讯</p>
+                    <div class="qr-code">
+                        <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/QQ群/2025社团总群.png" alt="MITA QQ群二维码">
+                    </div>
+                    <p class="join-desc">群号：1062803942</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>© 2025 MITA 数学与智能科技协会</p>
+        </footer>
+    </div>
+</body>
+</html>

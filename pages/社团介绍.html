@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>MITA | 社团介绍</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../assets/css/mainpage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
+    <script defer src="../assets/js/KaTeX.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #2c4a7a;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        .section-content {
+            line-height: 1.2;
+            color: #4a5568;
+        }
+        .section-content p {
+            margin-bottom: 20px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            background: rgba(74, 107, 172, 0.1);
+            color: #2c4a7a;
+        }
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c4a7a;
+        }
+        .feature-desc {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c4a7a;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            color: #4a5568;
+            font-size: 1rem;
+        }
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .honor-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+        .honor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .honor-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 24px;
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+            flex-shrink: 0;
+        }
+        .honor-text {
+            color: #4a5568;
+            font-weight: 500;
+        }
+        .rules-section {
+            margin-top: 30px;
+        }
+        .rules-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #2c4a7a;
+            display: flex;
+            align-items: center;
+        }
+        .rules-title i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        .rules-list {
+            list-style-type: none;
+            margin-bottom: 25px;
+        }
+        .rules-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            color: #4a5568;
+        }
+        .rules-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4a6bac;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .rules-note {
+            background: rgba(74, 107, 172, 0.05);
+            border-left: 4px solid #4a6bac;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            .logo {
+                margin-bottom: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav li {
+                margin: 0 10px 10px;
+            }
+            .mainpage-title {
+                font-size: 2.2rem;
+            }
+            .content-section {
+                padding: 25px;
+            }
+            .features-grid, .team-members {
+                grid-template-columns: 1fr;
+            }
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .stat-item {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../assets/images/MITA_Logo.png" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <h1 style="color: #2c4a7a; font-size: 1.5rem;">数学与智能科技协会</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
+                    <li><a href="#" class="current"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
+                    <li><a href="../pages/项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
+                    <li><a href="../pages/加入MITA.html"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
+                    <li><a href="../pages/邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="../pages/微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://space.bilibili.com/3546981368596533?spm_id_from=333.337.0.0"><i class="fa-brands fa-bilibili"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-zhihu"></i></a></li>
+                    <li class="dropdown">
+                        <a href="#">更多 <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../pages/组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
+                            <a href="../pages/管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
+                            <a href="../pages/许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
+                            <a href="#"><i class="fa-solid fa-language"></i>&ensp;English</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="mainpage-header">
+            <h1 class="mainpage-title">MITA 数学与智能科技协会</h1>
+            <p class="mainpage-subtitle">华东理工大学 学生社团</p>
+        </div>
+        <div class="content-section">
+            <h2 class="section-title"><i class="fa-solid fa-bullseye"></i> MITA&#8239;宗旨</h2>
+            <div class="section-content">
+                <p>数学是一种工具、一门语言、一件艺术品</p>
+                <p>通过深刻优雅的观点展现数学之美、通过丰富多彩的活动传播数学文化</p>
+            </div>
+        </div>
+        <div class="content-section">
+            <h2 class="section-title"><i class="fa-solid fa-star"></i> 社团特色</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="feature-title">学习互助</h3>
+                    <p class="feature-desc">MITA&#8239;鼓励会员们提出问题、交流问题、解答问题，在互助中不断提升自我，努力践行日拱一卒的学习精神</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="feature-title">资源共享</h3>
+                    <p class="feature-desc">MITA&#8239;鼓励会员共享学习资源，并保证同等地向会员提供任何学习资源，努力实现教育资源的公平化</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="feature-title">竞赛交流</h3>
+                    <p class="feature-desc">MITA&#8239;鼓励会员积极参加各类校内外竞赛，邀请竞赛经验丰富的选手分享竞赛经验，努力提升全社团/全校竞赛水平</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <h2 class="section-title"><i class="fa-solid fa-chart-simple"></i> 社团概览</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">社团成员</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">知识讲座</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">趣味竞赛</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">特色项目</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <h2 class="section-title"><i class="fa-solid fa-trophy"></i> 荣誉墙</h2>
+            <div class="honors-grid">
+                <div class="honor-card">
+                    <div class="honor-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="honor-text">2021&#8239;年华东理工大学创新创业类特色学生社团</div>
+                </div>
+                <div class="honor-card">
+                    <div class="honor-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="honor-text">2021&#8239;年校五星社团</div>
+                </div>
+                <div class="honor-card">
+                    <div class="honor-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="honor-text">2022&#8239;年校四星社团</div>
+                </div>
+                <div class="honor-card">
+                    <div class="honor-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="honor-text">2023&#8239;年上海市高校活力社团</div>
+                </div>
+                <div class="honor-card">
+                    <div class="honor-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="honor-text">2023&#8239;年校四星社团</div>
+                </div>
+                <div class="honor-card">
+                    <div class="honor-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="honor-text">2024&#8239;年校四星社团</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <h2 class="section-title"><i class="fa-solid fa-file-contract"></i> MITA&#8239;会员守则</h2>
+            <div class="rules-section">
+                <h3 class="rules-title">作为&#8239;MITA&#8239;会员，您必须满足以下条件：</h3>
+                <ul class="rules-list">
+                    <li>政治立场鲜明</li>
+                    <li>具有良好的生活/学习作风</li>
+                    <li>热爱数学及其相关学科</li>
+                    <li>无犯罪记录，无违纪违规行为</li>
+                    <li>作为或曾经作为华东理工大学在校学生</li>
+                </ul>
+            </div>
+            <div class="rules-section">
+                <h3 class="rules-title">作为&#8239;MITA&#8239;会员，您必须遵守以下规则：</h3>
+                <ul class="rules-list">
+                    <li>严格遵守国家法律法规、学校规定</li>
+                    <li>不得在未经许可时使用&#8239;MITA&#8239;的名义从事任何活动</li>
+                    <li>不得随意修改或侮辱&#8239;MITA&#8239;的官方名称、简称和&#8239;Logo&#8239;等信息</li>
+                    <li>相互尊重，团结协作，文明交流，营造和谐的社团氛围</li>
+                    <li>自觉维护&#8239;MITA&#8239;集体荣誉和形象，不做任何损害&#8239;MITA&#8239;利益和声誉的行为</li>
+                    <li>可以出于任何非商业目的使用&#8239;MITA&#8239;资源，但不能在未经许可时以任何方式明示/暗示&#8239;MITA&#8239;认可您的使用方式</li>
+                    <li>可以对&#8239;MITA&#8239;的决策提出异议，但必须遵守该手册中的全部条款</li>
+                </ul>
+            </div>
+            <p><strong>若您不满足以上条件或未遵守以上规则，MITA&#8239;有权对您的会员身份和社团职务作出更改</strong></p>
+        </div>
+        <footer>
+            <p>© 2025 MITA 数学与智能科技协会</p>
+        </footer>
+    </div>
+</body>
+</html>

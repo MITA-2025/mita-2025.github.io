@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>MITA | 微信公众号</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../assets/css/cardpage.css">
+    <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
+    <style>
+        .wechat-title {
+            color: #2c4a7a;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .wechat-desc {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 10px 0 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .qr-code:hover {
+            transform: scale(1.05);
+        }
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            .logo {
+                margin-bottom: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav li {
+                margin: 0 10px 10px;
+            }
+            .cardpage-title {
+                font-size: 2.5rem;
+            }
+            .cardpage-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .cardpage-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../assets/images/MITA_Logo.png" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <h1 style="color: #2c4a7a; font-size: 1.5rem;">数学与智能科技协会</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
+                    <li><a href="../pages/社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
+                    <li><a href="../pages/项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
+                    <li><a href="../pages/加入MITA.html"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
+                    <li><a href="../pages/邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="#" class="current"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://space.bilibili.com/3546981368596533?spm_id_from=333.337.0.0"><i class="fa-brands fa-bilibili"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-zhihu"></i></a></li>
+                    <li class="dropdown">
+                        <a href="#">更多 <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../pages/组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
+                            <a href="../pages/管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
+                            <a href="../pages/许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
+                            <a href="#"><i class="fa-solid fa-language"></i>&ensp;English</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="cardpage-container">
+            <h1 class="cardpage-title"><i class="fa-brands fa-weixin"></i> 微信公众号</h1>
+            <p class="cardpage-subtitle">获取最新社团动态、活动资讯和学术资源</p>
+            <div class="cardpage-content">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-brands fa-weixin"></i></div>
+                    <h3 class="wechat-title">华理数协&#8239;MITA</h3>
+                    <p class="wechat-desc">扫描二维码关注&#8239;MITA&#8239;官方微信公众号</p>
+                    <div class="qr-code">
+                        <img src="../assets/images/微信公众号.png">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>© 2025 MITA 数学与智能科技协会</p>
+        </footer>
+    </div>
+</body>
+</html>

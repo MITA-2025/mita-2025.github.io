@@ -1,0 +1,65 @@
+.cardpage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+}
+.cardpage-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+}
+.cardpage-title {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: #2c4a7a;
+}
+.cardpage-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+.card {
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 50px 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.3);
+}
+.card-icon {
+    color: #2c4a7a;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    background: rgba(74, 107, 172, 0.1);
+}
