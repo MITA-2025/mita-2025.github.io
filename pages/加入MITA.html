@@ -4,52 +4,14 @@
     <title>MITA | 加入MITA</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MITA's Website Style -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dropdown.css">
     <link rel="stylesheet" href="../assets/css/cardpage.css">
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
     <style>
-        .join-icon {
-            color: #2c4a7a;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 28px;
-            background: rgba(74, 107, 172, 0.1);
-        }
-        .join-title {
-            color: #2c4a7a;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        .join-desc {
-            color: #4a5568;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            margin: 10px 0 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .qr-code:hover {
-            transform: scale(1.05);
-        }
-        .qr-code img {
-            width: 100%;
-            height: 100%;
-        }
-        .join-button {
+        .enter-button {
             display: inline-block;
             background: linear-gradient(45deg, #4a6bac, #2c4a7a);
             color: white;
@@ -62,7 +24,7 @@
             box-shadow: 0 5px 15px rgba(42, 74, 138, 0.3);
             margin-top: 10px;
         }
-        .join-button:hover {
+        .enter-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(42, 74, 138, 0.4);
             background: linear-gradient(45deg, #3c5a94, #1a2c4e);
@@ -108,20 +70,20 @@
             <nav>
                 <ul>
                     <li><a href="../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
-                    <li><a href="../pages/社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
-                    <li><a href="../pages/项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
+                    <li><a href="社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
+                    <li><a href="项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
                     <li><a href="#" class="current"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
-                    <li><a href="../pages/邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
-                    <li><a href="../pages/微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
                     <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
                     <li><a href="https://space.bilibili.com/3546981368596533?spm_id_from=333.337.0.0"><i class="fa-brands fa-bilibili"></i></a></li>
                     <li><a href="#"><i class="fa-brands fa-zhihu"></i></a></li>
                     <li class="dropdown">
                         <a href="#">更多 <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="../pages/组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
-                            <a href="../pages/管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
-                            <a href="../pages/许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
+                            <a href="组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
+                            <a href="管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
+                            <a href="许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
                             <a href="#"><i class="fa-solid fa-language"></i>&ensp;English</a>
                         </div>
                     </li>
@@ -134,23 +96,23 @@
             <div class="cardpage-content">
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-user-plus"></i></div>
-                    <h3 class="join-title">加入社团</h3>
-                    <p class="join-desc">成为&#8239;MITA&#8239;会员，参与精彩活动和项目</p>
+                    <h3 class="card-title">加入社团</h3>
+                    <p class="card-desc">成为&#8239;MITA&#8239;会员，参与精彩活动和项目</p>
                     <div class="qr-code">
                         <img src="../assets/images/2025入社问卷.png">
                     </div>
-                    <a href="https://wj.qq.com/s2/24287898/096f/" class="join-button">
+                    <a href="https://wj.qq.com/s2/24287898/096f/" class="enter-button">
                         <i class="fa-solid fa-pen-to-square"></i> 填写入社问卷
                     </a>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fa-brands fa-qq"></i></div>
-                    <h3 class="join-title">加入&#8239;QQ&#8239;交流群</h3>
-                    <p class="join-desc">加入&#8239;MITA&#8239;社团总群，获取最新资讯</p>
+                    <h3 class="card-title">加入&#8239;QQ&#8239;交流群</h3>
+                    <p class="card-desc">加入&#8239;MITA&#8239;社团总群，获取最新资讯</p>
                     <div class="qr-code">
                         <img src="../assets/images/2025社团总群.png">
                     </div>
-                    <p class="join-desc">群号：1062803942</p>
+                    <p>群号：1062803942</p>
                 </div>
             </div>
         </main>

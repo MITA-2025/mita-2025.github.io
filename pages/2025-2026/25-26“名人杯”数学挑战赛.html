@@ -4,109 +4,42 @@
     <title>MITA | 25-26“名人杯”数学挑战赛</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dropdown.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <!-- MITA's Website Style -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../../assets/css/eventpage.css">
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
-    <script defer src="../assets/js/KaTeX.js"></script>
+    <!-- KaTeX -->
+    <script defer src="../../assets/js/KaTeX.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <style>
-        .mainpage-header {
-            text-align: center;
-            padding: 60px 0 30px;
-        }
-        .mainpage-title {
-            font-size: 2.8rem;
-            color: #2c4a7a;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 25px;
-            color: #2c4a7a;
-            display: flex;
-            align-items: center;
-        }
-        
-        .section-title i {
-            margin-right: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-            margin-top: 20px;
-        }
-        
-        .project-card {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 12px;
-            padding: 30px;
-            border-top: 3px solid #2c4a7a;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #2c4a7a, #4a6bac);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .project-card:hover .project-icon {
-            transform: scale(1.05);
-            background: rgba(74, 107, 172, 0.2);
-        }
-        
         .project-info {
             flex: 1;
         }
-        
         .project-title {
             font-size: 1.5rem;
             margin-bottom: 10px;
             color: #2c4a7a;
             font-weight: 600;
         }
-        
         .project-subtitle {
             color: #4a5568;
             font-size: 1rem;
             margin-bottom: 15px;
             font-weight: 500;
         }
-        
         .project-desc {
             color: #4a5568;
             line-height: 1.7;
             margin-bottom: 25px;
         }
-        
         .project-features {
             margin-top: 0;
             margin-bottom: 25px;
         }
-        
         .project-features h3 {
             color: #2c4a7a;
             margin-bottom: 25px;
@@ -114,15 +47,12 @@
             display: flex;
             align-items: center;
         }
-        
         .project-features h3 i {
             margin-right: 10px;
         }
-        
         .features-list {
             list-style-type: none;
         }
-        
         .features-list li {
             margin-bottom: 12px;
             padding-left: 22px;
@@ -130,7 +60,6 @@
             color: #4a5568;
             line-height: 1.5;
         }
-        
         .features-list li:before {
             content: "";
             position: absolute;
@@ -141,7 +70,6 @@
             border-radius: 50%;
             background: #4a6bac;
         }
-        
         .season-section {
             margin: 25px 0;
             margin-top: 0px;
@@ -151,13 +79,11 @@
             border-left: 3px solid #4a6bac;
             transition: all 0.3s ease;
         }
-        
         .season-section:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             background: rgba(255, 255, 255, 0.7);
         }
-        
         .season-section h3 {
             color: #2c4a7a;
             margin-bottom: 20px;
@@ -165,7 +91,6 @@
             display: flex;
             align-items: center;
         }
-        
         .season-section h3 i {
             margin-right: 10px;
         }
@@ -260,38 +185,6 @@
         .btn i {
             margin-right: 8px;
         }
-        .info-box {
-            margin: 25px 0;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 8px;
-            border: 1px solid rgba(44, 74, 122, 0.1);
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-        }
-        .info-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.9);
-        }
-        .info-box h3 {
-            color: #2c4a7a;
-            margin-top: 6px;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-        .info-box ul {
-            margin-top: 18px;
-            margin-bottom: -10px;
-            margin-left: 20px;
-            color: #4a5568;
-        }
-        .info-box li {
-            margin-bottom: 10px;
-            line-height: 1.5;
-            position: relative;
-            padding-left: 5px;
-        }
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -307,7 +200,7 @@
             nav li {
                 margin: 0 10px 10px;
             }
-            .mainpage-title {
+            .eventpage-title {
                 font-size: 2.2rem;
             }
             .projects-grid {
@@ -337,7 +230,7 @@
                 width: 100%;
                 justify-content: center;
             }
-            .mainpage-title {
+            .eventpage-title {
                 font-size: 1.8rem;
             }
             .section-title {
@@ -351,47 +244,48 @@
         <header>
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="../assets/images/MITA_Logo.png" style="width: 100%; height: 100%; object-fit: contain;">
+                    <img src="../../assets/images/MITA_Logo.png" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <h1 style="color: #2c4a7a; font-size: 1.5rem;">数学与智能科技协会</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
-                    <li><a href="../pages/社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
-                    <li><a href="../pages/项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
-                    <li><a href="../pages/加入MITA.html"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
-                    <li><a href="../pages/邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
-                    <li><a href="../pages/微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="../../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
+                    <li><a href="../社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
+                    <li><a href="../项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
+                    <li><a href="../加入MITA.html"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
+                    <li><a href="../邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="../微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
                     <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
                     <li><a href="https://space.bilibili.com/3546981368596533?spm_id_from=333.337.0.0"><i class="fa-brands fa-bilibili"></i></a></li>
                     <li><a href="#"><i class="fa-brands fa-zhihu"></i></a></li>
                     <li class="dropdown">
                         <a href="#">更多 <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="../pages/组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
-                            <a href="../pages/管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
-                            <a href="../pages/许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
+                            <a href="../组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
+                            <a href="../管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
+                            <a href="../许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
                             <a href="#"><i class="fa-solid fa-language"></i>&ensp;English</a>
                         </div>
                     </li>
                 </ul>
             </nav>
         </header>
-        <div class="mainpage-header">
-            <h1 class="mainpage-title">2025 "名人杯"数学挑战赛</h1>
+        <main class="eventpage-container">
+        <div class="eventpage-header">
+            <h1 class="eventpage-title">25-26&#8239;“名人杯”数学挑战赛</h1>
         </div>
         <div class="info-box">
-            <h3><i class="fa-solid fa-circle-info"></i> 赛事简介</h3>
-            <p>"名人杯"数学挑战赛是由 <strong>MITA 数学与智能科技协会</strong> 举办的面向全体&#8239;MITA&#8239;会员的数学竞赛活动，分为常规赛和季后赛两个阶段</p>
+            <h3><i class="fa-solid fa-circle-info"></i> 活动简介</h3>
+            <p>"名人杯"数学挑战赛是由 <strong>MITA 数学与智能科技协会</strong> 举办的数学活动，参与挑战赛并获得积分，精美礼品等你来兑换！</p>
             <ul>
                 <li>该活动仅面向&#8239;MITA&#8239;会员开放</li>
                 <li>该活动由学术部负责</li>
             </ul>
         </div>
         <h2 class="section-title"><i class="fa-solid fa-calendar-days"></i> 常规赛</h2>
-        <div class="projects-grid">
-            <div class="project-card">
+        <div class="section-grid">
+            <div class="section-card">
                 <div class="project-features">
                     <h3><i class="fa-solid fa-user-check"></i> 参赛方式</h3>
                     <p>首次获得积分即视为参赛</p>
@@ -447,8 +341,8 @@
             </div>
         </div>
         <h2 class="section-title"><i class="fa-solid fa-medal"></i> 季后赛</h2>
-        <div class="projects-grid">
-            <div class="project-card">
+        <div class="section-grid">
+            <div class="section-card">
                 <div class="project-features">
                     <h3><i class="fa-solid fa-user-check"></i> 参赛方式</h3>
                     <p>加入季后赛群并修改群昵称为“姓名+学号”形式即视为参赛（群号将于&#8239;Euler&#8239;赛季开始前约&#8239;10&#8239;天公布）</p>
@@ -504,6 +398,7 @@
             <h3><i class="fa-solid fa-circle-question"></i> 联系方式</h3>
             <p>负责人：周可信（学术部）jokerxin@126.com</p>
         </div>
+        </main>
         <footer>
             <p>© 2025 MITA 数学与智能科技协会</p>
         </footer>
