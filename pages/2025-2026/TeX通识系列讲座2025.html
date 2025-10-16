@@ -22,11 +22,9 @@
             align-items: flex-start;
             margin-bottom: -10px;
         }
-        
         .lecture-title-container {
             flex-grow: 1;
         }
-        
         .lecture-number {
             display: inline-block;
             background: #2c4a7a;
@@ -39,24 +37,20 @@
             font-weight: bold;
             margin-bottom: 25px;
         }
-        
         .lecture-title {
             font-size: 1.5rem;
             margin-bottom: 10px;
             color: #2c4a7a;
             font-weight: 600;
         }
-        
         .lecture-desc {
             color: #4a5568;
             line-height: 1.7;
             margin-bottom: 20px;
         }
-        
         .features-list {
             list-style-type: none;
         }
-        
         .features-list li {
             margin-bottom: 8px;
             padding-left: 22px;
@@ -65,7 +59,6 @@
             line-height: 1.5;
             font-size: 0.9rem;
         }
-        
         .features-list li:before {
             content: "";
             position: absolute;
@@ -76,7 +69,6 @@
             border-radius: 50%;
             background: #4a6bac;
         }
-        
         .btn {
             display: inline-flex;
             align-items: center;
@@ -92,33 +84,27 @@
             min-width: 140px;
             height: 44px;
         }
-        
         .btn-primary {
             background: linear-gradient(45deg, #4a6bac, #2c4a7a);
             color: white;
         }
-        
         .btn-primary:hover {
             background: linear-gradient(45deg, #3a5a9c, #1a2c4e);
             box-shadow: 0 5px 15px rgba(74, 107, 172, 0.4);
             transform: translateY(-2px);
         }
-        
         .btn-secondary {
             background: rgba(255, 255, 255, 0.8);
             color: #2c4a7a;
             border: 1px solid #2c4a7a;
         }
-        
         .btn-secondary:hover {
             background: rgba(74, 107, 172, 0.1);
             transform: translateY(-2px);
         }
-        
         .btn i {
             margin-right: 8px;
         }
-        
         footer {
             text-align: center;
             margin-top: 60px;
@@ -126,11 +112,9 @@
             color: #718096;
             border-top: 1px solid rgba(44, 74, 122, 0.1);
         }
-
         .content-section {
             margin-bottom: 30px;
         }
-        
         .content-section h3 {
             color: #2c4a7a;
             margin-bottom: 15px;
@@ -138,11 +122,9 @@
             display: flex;
             align-items: center;
         }
-        
         .content-section h3 i {
             margin-right: 10px;
         }
-        
         .info-section {
             background: rgba(74, 107, 172, 0.05);
             border-radius: 8px;
@@ -150,7 +132,6 @@
             margin: 25px 0;
             border-left: 2px solid #4a6bac;
         }
-        
         .info-section h3 {
             color: #2c4a7a;
             margin-bottom: 20px;
@@ -158,11 +139,9 @@
             display: flex;
             align-items: center;
         }
-        
         .info-section h3 i {
             margin-right: 10px;
         }
-        
         .preview-link {
             display: flex;
             align-items: center;
@@ -175,7 +154,6 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             margin-bottom: 10px;
         }
-        
         .preview-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -195,51 +173,17 @@
             align-items: center;
             margin-bottom: 10px;
         }
-        
         .time-location-item i {
             margin-right: 10px;
             color: #4a6bac;
             width: 20px;
             text-align: center;
         }
-        
-        .speaker-card {
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 12px;
-            padding: 25px;
-            border-top: 1px solid #2c4a7a;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-            margin-top: 25px;
-        }
-        
-        .speaker-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #2c4a7a, #4a6bac);
-        }
-        
-        .speaker-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.9);
-        }
-        
         .speaker-header {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
-        
         .speaker-avatar {
             width: 80px;
             height: 80px;
@@ -253,7 +197,6 @@
             font-size: 2rem;
             font-weight: bold;
         }
-        
         .speaker-info {
             flex-grow: 1;
         }
@@ -263,13 +206,11 @@
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
         .speaker-title {
             color: #4a5568;
             font-size: 1rem;
             margin-bottom: 10px;
         }
-        
         .speaker-badges {
             display: flex;
             flex-wrap: wrap;
@@ -291,26 +232,20 @@
             margin-bottom: 5px;
         }
         @media (max-width: 768px) {
-            /* 导航栏优化 */
             header .logo h1 {
                 font-size: 1.2rem;
             }
-            
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
             nav ul li {
                 margin: 2px;
             }
-            
             nav ul li a {
                 padding: 8px 12px;
                 font-size: 0.85rem;
             }
-            
-            /* 主标题区域优化 */
             .eventpage-container {
                 padding: 5px;
             }
@@ -318,91 +253,64 @@
                 font-size: 1.6rem;
                 line-height: 1.3;
             }
-            
             .eventpage-subtitle {
                 font-size: 1rem;
             }
-            
-            /* 卡片布局优化 */
             .section-card {
                 padding: 15px;
                 margin-bottom: 20px;
             }
-            
             .lecture-title {
                 font-size: 1.3rem;
             }
-            
             .lecture-desc {
                 font-size: 0.95rem;
             }
-            
-            /* 按钮优化 */
             .btn {
                 width: 100%;
                 margin-bottom: 10px;
                 padding: 14px 20px;
             }
-            
-            /* 内容区域优化 */
             .content-section h3 {
                 font-size: 1.1rem;
             }
-            
             .features-list li {
                 font-size: 0.85rem;
             }
-            
-            /* 信息区域优化 */
             .info-section {
                 padding: 15px;
             }
-            
             .info-section h3 {
                 font-size: 1.1rem;
             }
-            
-            /* 预览链接优化 */
             .preview-link {
                 padding: 12px;
             }
-            
             .preview-link .link-title {
                 font-size: 0.85rem;
             }
-            
-            /* 演讲者卡片优化 */
             .speaker-header {
                 flex-direction: column;
                 text-align: center;
             }
-            
             .speaker-avatar {
                 margin-right: 0;
                 margin-bottom: 15px;
             }
-            
             .speaker-name {
                 font-size: 1.3rem;
             }
-            
             .speaker-badges {
                 justify-content: center;
             }
-            
-            /* 常见问题区域优化 */
             .info-box ul li {
                 margin-bottom: 15px;
             }
-            
-            /* 页脚优化 */
             footer {
                 margin-top: 40px;
                 padding: 15px 0;
             }
         }
-
-        /* 超小屏幕优化 */
         @media (max-width: 480px) {
             .eventpage-container {
                 padding: 5px;
@@ -410,34 +318,27 @@
             .lecture-title {
                 font-size: 1.2rem;
             }
-            
             .lecture-number {
                 width: 26px;
                 height: 26px;
                 line-height: 26px;
                 font-size: 0.9rem;
             }
-            
             .content-section h3 {
                 font-size: 1rem;
             }
-            
             .features-list li {
                 font-size: 0.8rem;
             }
-            
             .info-section h3 {
                 font-size: 1rem;
             }
-            
             .speaker-name {
                 font-size: 1.2rem;
             }
-            
             .speaker-title {
                 font-size: 0.9rem;
             }
-            
             .speaker-badge {
                 font-size: 0.75rem;
             }
@@ -477,182 +378,170 @@
             </nav>
         </header>
         <main class="eventpage-container">
-        <div class="eventpage-header">
-            <h1 class="eventpage-title">$\TeX$&#8239;通识系列讲座&#8239;2025</h1>
-            <p class="eventpage-subtitle">从入门到精通，打造属于你的完美数学公式</p>
-        </div>
-        
-        <div class="info-box">
-            <h3><i class="fa-solid fa-circle-info"></i> 系列讲座简介</h3>
-            <ul>
-                <li>该活动面向全校同学开放</li>
-                <li>该活动由学术部负责</li>
-            </ul>
-            
-            <div class="info-section" style="margin-top: 40px;">
-                <h3><i class="fa-solid fa-book-open"></i> 系列讲座最终成果预览</h3>
-                <a href="https://gitee.com/MITA-2025/MITA_MathBook_Demo/raw/master/特别版本/2025招新版/MITA数学手册.pdf" class="preview-link" style="max-width: 270px">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    <div class="link-title">MITA数学手册（2025招新版）</div>
-                </a>
+            <div class="eventpage-header">
+                <h1 class="eventpage-title">$\TeX$&#8239;通识系列讲座&#8239;2025</h1>
+                <p class="eventpage-subtitle">从入门到精通，打造属于你的完美数学公式</p>
             </div>
-        </div>
-        
-        <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> 讲座内容</h2>
-        
-        <div class="section-grid">
-            <div class="section-card">
-                <div class="lecture-header">
-                    <div class="lecture-title-container">
-                        <div class="lecture-number">1</div>
-                        <h3 class="lecture-title">&#8239;$\TeX$&#8239;与&#8239;Markdown&#8239;入门</h3>
-                        <p class="lecture-desc">配置&#8239;VScode&#8239;环境，掌握基本&#8239;$\TeX$&#8239;语法并快速上手&#8239;Markdown</p>
-                    </div>
-                </div>
-                <div class="info-section">
-                    <h3><i class="fa-solid fa-calendar-alt"></i> 时间&#8239;&&#8239;地点</h3>
-                    <div class="time-location-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <span>2025.10.26（周日）19:00（可能更改，请留意页面信息更新）</span>
-                    </div>
-                    <div class="time-location-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>线上/线下（具体地点待定，请留意页面信息更新）</span>
-                    </div>
-                </div>
-                <div class="content-section">
-                    <h3><i class="fa-solid fa-laptop-code"></i> VScode&#8239;安装与配置</h3>
-                    <ul class="features-list">
-                        <li>下载并安装&#8239;VScode&#8239;编辑器</li>
-                        <li>配置中文语言包，实现界面中文化</li>
-                        <li>安装&#8239;LaTeX Workshop&#8239;扩展，获得&#8239;$\TeX$&#8239;公式支持</li>
-                        <li>安装&#8239;Markdown Preview Enhanced&#8239;扩展，实时预览&#8239;Markdown&#8239;文档</li>
-                    </ul>
-                </div>
-                <div class="content-section">
-                    <h3><i class="fa-solid fa-square-root-variable"></i> $\TeX$&#8239;公式入门</h3>
-                    <ul class="features-list">
-                        <li>学习&#8239;$\TeX$&#8239;核心语法与命令结构</li>
-                        <li>掌握上下标、分数、根式等基本数学符号</li>
-                        <li>学习积分、求和、极限等高等数学符号</li>
-                        <li>掌握矩阵、方程组、分段函数等复杂结构</li>
-                        <li>行内公式与独立公式环境</li>
-                        <li>多行公式对齐与编号</li>
-                    </ul>
-                </div>
-                <div class="content-section">
-                    <h3><i class="fa-solid fa-file-lines"></i> Markdown&#8239;核心语法</h3>
-                    <ul class="features-list">
-                        <li>标题、段落与换行</li>
-                        <li>粗体、斜体与删除线</li>
-                        <li>列表与任务列表</li>
-                        <li>链接与图片插入</li>
-                        <li>$\TeX$&#8239;公式嵌入</li>
-                        <li>代码块与行内代码</li>
-                        <li>将&#8239;Markdown&#8239;导出为&#8239;HTML&#8239;网页和&#8239;PDF&#8239;文档</li>
-                    </ul>
-                </div>
-                <a href="https://wj.qq.com/s2/24371219/707c/" class="btn btn-primary"><i class="fa-solid fa-circle-play"></i> 报名参加</a>
-            </div>
-            
-            <div class="section-card">
-                <div class="lecture-header">
-                    <div class="lecture-title-container">
-                        <div class="lecture-number">2</div>
-                        <h3 class="lecture-title">&#8239;$\LaTeX$&#8239;基本介绍</h3>
-                        <p class="lecture-desc">了解&#8239;$\LaTeX$&#8239;文档结构，掌握专业文档排版的基本要素</p>
-                    </div>
-                </div>
-                
-                <div class="info-section">
-                    <h3><i class="fa-solid fa-calendar-alt"></i> 时间&#8239;&&#8239;地点</h3>
-                    <div class="time-location-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <span>时间待定</span>
-                    </div>
-                    <div class="time-location-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>地点待定</span>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-secondary"><i class="fa-solid fa-clock"></i> 敬请期待</a>
-            </div>
-            
-            <div class="section-card">
-                <div class="lecture-header">
-                    <div class="lecture-title-container">
-                        <div class="lecture-number">3</div>
-                        <h3 class="lecture-title">$\LaTeX$&#8239;进阶技巧</h3>
-                        <p class="lecture-desc">掌握复杂数学排版、学习宏定义和其它高级文档设计技巧</p>
-                    </div>
-                </div>
-                
-                <div class="info-section">
-                    <h3><i class="fa-solid fa-calendar-alt"></i> 时间&#8239;&&#8239;地点</h3>
-                    <div class="time-location-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <span>时间待定</span>
-                    </div>
-                    <div class="time-location-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>地点待定</span>
-                    </div>
-                </div>
-                
-                <a href="#" class="btn btn-secondary"><i class="fa-solid fa-clock"></i> 敬请期待</a>
-            </div>
-        </div>
-        
-        <div class="info-box">
-            <h3><i class="fa-solid fa-lightbulb"></i> 为什么数学专业的同学必须掌握&#8239;$\TeX$&#8239;？</h3>
-            <ul>
-                <li><strong>笔记革命：</strong>告别手写潦草，数学笔记用&#8239;Markdown + $\TeX$&#8239;高效工整</li>
-                <li><strong>作业神器：</strong>用&#8239;$\LaTeX$&#8239;排版的作业，逻辑清晰、版面整洁，给老师留下专业印象</li>
-                <li><strong>效率飞跃：</strong>大三大四的课程论文、毕业设计乃至未来科研，&#8239;$\LaTeX$&#8239;是排版标配</li>
-                <li><strong>活动加分：</strong>在&#8239;MITA&#8239;“名人杯”数学挑战赛中使用&#8239;$\TeX$&#8239;作答可获得额外积分</li>
-                <li><strong>思维锻炼：</strong>$\TeX$&#8239;的编写过程本身就是一种逻辑组织，帮助梳理证明步骤</li>
-            </ul>
-        </div>
-        
-        <div class="info-box">
-            <h3><i class="fa-solid fa-user-graduate"></i> 适合人群</h3>
-            <ul>
-                <li>数学专业希望提升笔记与作业质量的同学</li>
-                <li>准备参加数学建模等竞赛的同学</li>
-                <li>对学术写作、论文排版感兴趣的同学</li>
-                <li>希望提前掌握科研必备工具的同学</li>
-            </ul>
-        </div>
-        
-        <div class="info-box">
-            <h3><i class="fa-solid fa-circle-question"></i> 常见问题</h3>
-            <ul>
-                <li><strong>Q 需要前置知识吗？</strong><br>A 不需要，本系列讲座从零开始，适合完全没有编程或排版经验的同学。</li>
-                <li><strong>Q 可以只参加部分讲座吗？</strong><br>A 可以，但我们建议参加完整系列以获得最佳学习效果。</li>
-                <li><strong>Q 需要携带电脑参加吗？</strong><br>A 强烈建议，我们会在现场提供操作指导。</li>
-                <li><strong>Q 讲座资料会提供吗？</strong><br>A 会，每次讲座都提供完整讲义和示例代码。</li>
-                <li><strong>Q 有实践环节吗？</strong><br>A 有，每讲都包含实践环节，并有助教提供现场指导。</li>
-                <li><strong>Q 只有数学专业才可以参加吗？</strong><br>A 本系列讲座面向各专业同学，只要对内容排版感兴趣的同学都可以参加。</li>
-            </ul>
-        </div>
-        
-        <div class="speaker-card">
-            <div class="speaker-header">
-                <div class="speaker-avatar"><i class="fa-solid fa-user"></i></div>
-                <div class="speaker-info">
-                    <div class="speaker-name">周可信</div>
-                    <div class="speaker-title">MITA&#8239;学术部部长</div>
-                    <div class="speaker-badges">
-                        <div class="speaker-badge">知乎1000+关注者</div>
-                        <div class="speaker-badge">500+页&#8239;$\LaTeX$&#8239;排版经验</div>
-                    </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-info"></i> 系列讲座简介</h3>
+                <ul>
+                    <li>该活动面向全校同学开放</li>
+                    <li>该活动由学术部负责</li>
+                </ul>
+                <div class="info-section" style="margin-top: 40px;">
+                    <h3><i class="fa-solid fa-book-open"></i> 系列讲座最终成果预览</h3>
+                    <a href="https://gitee.com/MITA-2025/MITA_MathBook_Demo/raw/master/特别版本/2025招新版/MITA数学手册.pdf" class="preview-link" style="max-width: 270px">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <div class="link-title">MITA数学手册（2025招新版）</div>
+                    </a>
                 </div>
             </div>
-            <div class="speaker-details">
-                <p>知乎数学区答主，$\TeX$&#8239;通识系列讲座的主讲人，拥有丰富的&#8239;$\LaTeX$&#8239;排版经验和数学文档编写经验，参与编写&#8239;MITA&#8239;数学手册等资料</p>
-                <p>致力于推广&#8239;$\TeX$&#8239;在数学学习和研究中的应用，帮助数学专业同学提高文档编写效率和质量</p>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-info"></i> 主讲人简介</h3>
+                <div class="speaker-header">
+                    <div class="speaker-avatar"><i class="fa-solid fa-user"></i></div>
+                    <div class="speaker-info">
+                        <div class="speaker-name">周可信</div>
+                        <div class="speaker-title">MITA&#8239;学术部部长</div>
+                        <div class="speaker-badges">
+                            <div class="speaker-badge">知乎1000+关注者</div>
+                            <div class="speaker-badge">500+页&#8239;$\LaTeX$&#8239;排版经验</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaker-details">
+                    <p>知乎数学区答主，$\TeX$&#8239;通识系列讲座的主讲人，拥有丰富的&#8239;$\LaTeX$&#8239;排版经验和数学文档编写经验，参与编写&#8239;MITA&#8239;数学手册等资料</p>
+                    <p>致力于推广&#8239;$\TeX$&#8239;在数学学习和研究中的应用，帮助数学专业同学提高文档编写效率和质量</p>
+                </div>
             </div>
-        </div>
+            <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> 讲座内容</h2>
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="lecture-header">
+                        <div class="lecture-title-container">
+                            <div class="lecture-number">1</div>
+                            <h3 class="lecture-title">&#8239;$\TeX$&#8239;与&#8239;Markdown&#8239;入门</h3>
+                            <p class="lecture-desc">配置&#8239;VScode&#8239;环境，掌握基本&#8239;$\TeX$&#8239;语法并快速上手&#8239;Markdown</p>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-calendar-alt"></i> 时间&#8239;&&#8239;地点</h3>
+                        <div class="time-location-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>2025.10.26（周日）19:00</span>
+                        </div>
+                        <div class="time-location-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>线上/线下（具体地点待定，请留意页面信息更新）</span>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h3><i class="fa-solid fa-laptop-code"></i> VScode&#8239;安装与配置</h3>
+                        <ul class="features-list">
+                            <li>下载并安装&#8239;VScode&#8239;编辑器</li>
+                            <li>配置中文语言包，实现界面中文化</li>
+                            <li>安装&#8239;LaTeX Workshop&#8239;扩展，获得&#8239;$\TeX$&#8239;公式支持</li>
+                            <li>安装&#8239;Markdown Preview Enhanced&#8239;扩展，实时预览&#8239;Markdown&#8239;文档</li>
+                        </ul>
+                    </div>
+                    <div class="content-section">
+                        <h3><i class="fa-solid fa-square-root-variable"></i> $\TeX$&#8239;公式入门</h3>
+                        <ul class="features-list">
+                            <li>学习&#8239;$\TeX$&#8239;核心语法与命令结构</li>
+                            <li>掌握上下标、分数、根式等基本数学符号</li>
+                            <li>学习积分、求和、极限等高等数学符号</li>
+                            <li>掌握矩阵、方程组、分段函数等复杂结构</li>
+                            <li>行内公式与独立公式环境</li>
+                            <li>多行公式对齐与编号</li>
+                        </ul>
+                    </div>
+                    <div class="content-section">
+                        <h3><i class="fa-solid fa-file-lines"></i> Markdown&#8239;核心语法</h3>
+                        <ul class="features-list">
+                            <li>标题、段落与换行</li>
+                            <li>粗体、斜体与删除线</li>
+                            <li>列表与任务列表</li>
+                            <li>链接与图片插入</li>
+                            <li>$\TeX$&#8239;公式嵌入</li>
+                            <li>代码块与行内代码</li>
+                            <li>将&#8239;Markdown&#8239;导出为&#8239;HTML&#8239;网页和&#8239;PDF&#8239;文档</li>
+                        </ul>
+                    </div>
+                    <a href="https://wj.qq.com/s2/24371219/707c/" class="btn btn-primary"><i class="fa-solid fa-circle-play"></i> 报名参加</a>
+                </div>
+                <div class="section-card">
+                    <div class="lecture-header">
+                        <div class="lecture-title-container">
+                            <div class="lecture-number">2</div>
+                            <h3 class="lecture-title">&#8239;$\LaTeX$&#8239;基本介绍</h3>
+                            <p class="lecture-desc">了解&#8239;$\LaTeX$&#8239;文档结构，掌握专业文档排版的基本要素</p>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-calendar-alt"></i> 时间&#8239;&&#8239;地点</h3>
+                        <div class="time-location-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>时间待定</span>
+                        </div>
+                        <div class="time-location-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>地点待定</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary"><i class="fa-solid fa-clock"></i> 敬请期待</a>
+                </div>
+                <div class="section-card">
+                    <div class="lecture-header">
+                        <div class="lecture-title-container">
+                            <div class="lecture-number">3</div>
+                            <h3 class="lecture-title">$\LaTeX$&#8239;进阶技巧</h3>
+                            <p class="lecture-desc">掌握复杂数学排版、学习宏定义和其它高级文档设计技巧</p>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <h3><i class="fa-solid fa-calendar-alt"></i> 时间&#8239;&&#8239;地点</h3>
+                        <div class="time-location-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>时间待定</span>
+                        </div>
+                        <div class="time-location-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>地点待定</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary"><i class="fa-solid fa-clock"></i> 敬请期待</a>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-lightbulb"></i> 为什么数学专业的同学必须掌握&#8239;$\TeX$&#8239;？</h3>
+                <ul>
+                    <li><strong>笔记革命：</strong>告别手写潦草，数学笔记用&#8239;Markdown + $\TeX$&#8239;高效工整</li>
+                    <li><strong>作业神器：</strong>用&#8239;$\LaTeX$&#8239;排版的作业，逻辑清晰、版面整洁，给老师留下专业印象</li>
+                    <li><strong>效率飞跃：</strong>大三大四的课程论文、毕业设计乃至未来科研，&#8239;$\LaTeX$&#8239;是排版标配</li>
+                    <li><strong>活动加分：</strong>在&#8239;MITA&#8239;“名人杯”数学挑战赛中使用&#8239;$\TeX$&#8239;作答可获得额外积分</li>
+                    <li><strong>思维锻炼：</strong>$\TeX$&#8239;的编写过程本身就是一种逻辑组织，帮助梳理证明步骤</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-user-graduate"></i> 适合人群</h3>
+                <ul>
+                    <li>数学专业希望提升笔记与作业质量的同学</li>
+                    <li>准备参加数学建模等竞赛的同学</li>
+                    <li>对学术写作、论文排版感兴趣的同学</li>
+                    <li>希望提前掌握科研必备工具的同学</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-question"></i> 常见问题</h3>
+                <ul>
+                    <li><strong>Q 需要前置知识吗？</strong><br>A 不需要，本系列讲座从零开始，适合完全没有编程或排版经验的同学。</li>
+                    <li><strong>Q 可以只参加部分讲座吗？</strong><br>A 可以，但我们建议参加完整系列以获得最佳学习效果。</li>
+                    <li><strong>Q 需要携带电脑参加吗？</strong><br>A 强烈建议，我们会在现场提供操作指导。</li>
+                    <li><strong>Q 讲座资料会提供吗？</strong><br>A 会，每次讲座都提供完整讲义和示例代码。</li>
+                    <li><strong>Q 有实践环节吗？</strong><br>A 有，每讲都包含实践环节，并有助教提供现场指导。</li>
+                    <li><strong>Q 只有数学专业才可以参加吗？</strong><br>A 本系列讲座面向各专业同学，只要对内容排版感兴趣的同学都可以参加。</li>
+                </ul>
+            </div>
         </main>
         <footer>
             <p>© 2025 MITA 数学与智能科技协会</p>
