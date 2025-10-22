@@ -188,53 +188,100 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
+                align-items: flex-start;
                 padding: 15px 0;
             }
             .logo {
                 margin-bottom: 15px;
             }
             nav ul {
-                justify-content: center;
                 flex-wrap: wrap;
+                gap: 10px;
             }
             nav li {
-                margin: 0 10px 10px;
+                margin-left: 0;
+                margin-right: 15px;
             }
-            .eventpage-title {
-                font-size: 2.2rem;
+            .dropdown-content {
+                transform: none;
+                left: 0;
+                right: 0;
+                min-width: auto;
             }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .project-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .project-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
-                align-self: center;
-            }
-            .season-list {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 576px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .project-card {
-                padding: 20px;
-            }
-            .btn {
-                width: 100%;
-                justify-content: center;
+            .eventpage-container {
+                padding: 15px;
             }
             .eventpage-title {
                 font-size: 1.8rem;
             }
-            .section-title {
+            .eventpage-subtitle {
+                font-size: 1.1rem;
+            }
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .section-card {
+                padding: 20px;
+            }
+            .lecture-title {
+                font-size: 1.3rem;
+            }
+            .speaker-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .speaker-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .speaker-name {
+                font-size: 1.3rem;
+            }
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .info-box {
+                padding: 20px;
+                margin: 15px 0;
+            }
+            .content-section h3 {
+                font-size: 1.1rem;
+            }
+            .time-location-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .time-location-item i {
+                margin-bottom: 5px;
+            }
+            .preview-link {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .eventpage-title {
                 font-size: 1.5rem;
+            }
+            .eventpage-subtitle {
+                font-size: 1rem;
+            }
+            .section-card {
+                padding: 15px;
+            }
+            .info-box {
+                padding: 15px;
+            }
+            .speaker-badges {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .speaker-badge {
+                width: fit-content;
+            }
+            .lecture-header {
+                flex-direction: column;
             }
         }
     </style>
@@ -308,11 +355,11 @@
                             </div>
                             <div class="season-item">
                                 <div class="season-name">Leibniz&#8239;赛季</div>
-                                <div class="season-date">2025.11.07～2025.12.19</div>
+                                <div class="season-date">2025.11.07～2025.11.28</div>
                             </div>
                             <div class="season-item">
                                 <div class="season-name">Riemann&#8239;赛季</div>
-                                <div class="season-date">2025.12.19～2026.01.16</div>
+                                <div class="season-date">2025.11.28～2025.12.19</div>
                             </div>
                             <div class="season-item">
                                 <div class="season-name">Fourier&#8239;赛季</div>
@@ -360,11 +407,11 @@
                         <div class="season-list">
                             <div class="season-item">
                                 <div class="season-name">Euler&#8239;赛季</div>
-                                <div class="season-date">2026.01.25～2026.02.13（20天）</div>
+                                <div class="season-date">2026.01.25～2026.02.14</div>
                             </div>
                             <div class="season-item">
                                 <div class="season-name">Gauss&#8239;赛季</div>
-                                <div class="season-date">2026.07.19～2026.08.28（40天）</div>
+                                <div class="season-date">2026.07.19～2026.08.28</div>
                             </div>
                         </div>
                     </div>
@@ -372,6 +419,7 @@
                         <h3><i class="fa-solid fa-gift"></i> 季后赛奖池</h3>
                         <ul class="features-list">
                             <li>“名人杯”数学挑战赛奖状</li>
+                            <li>MITA&#8239;“名人杯”数学挑战赛记录册&#8239;<sub>2025.10.27～2026.08.28</sub></li>
                             <li>MITA&#8239;数学手册&#8239;<sub>2026</sub></li>
                             <li>MITA&#8239;数学手册&#8239;<sub>2025冬/2026夏</sub></li>
                             <li>MITA&#8239;书签&#8239;<sub>Formula系列</sub></li>
