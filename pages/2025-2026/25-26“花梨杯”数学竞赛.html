@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>MITA | 25-26“花梨杯”数学竞赛</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MITA's Website Style -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../../assets/css/eventpage.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
+    <!-- KaTeX -->
+    <script defer src="../../assets/js/KaTeX.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        .project-info {
+            flex: 1;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c4a7a;
+            font-weight: 600;
+        }
+        .project-subtitle {
+            color: #4a5568;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .project-desc {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .project-features {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        .project-features h3 {
+            color: #2c4a7a;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .project-features h3 i {
+            margin-right: 10px;
+        }
+        .features-list {
+            list-style-type: none;
+        }
+        .features-list li {
+            margin-bottom: 12px;
+            padding-left: 22px;
+            position: relative;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+        .features-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4a6bac;
+        }
+        .season-section {
+            margin: 25px 0;
+            margin-top: 0px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            border-left: 3px solid #4a6bac;
+            transition: all 0.3s ease;
+        }
+        .season-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .season-section h3 {
+            color: #2c4a7a;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .season-section h3 i {
+            margin-right: 10px;
+        }
+        .season-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .season-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 74, 122, 0.1);
+        }
+        .season-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(44, 74, 122, 0.2);
+        }
+        .season-name {
+            font-weight: 600;
+            color: #2c4a7a;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        .season-date {
+            font-size: 0.85rem;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+        .prize-section {
+            margin-top: 15px;
+            padding: 20px;
+            background: rgba(74, 107, 172, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #4a6bac;
+            transition: all 0.3s ease;
+        }
+        .prize-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background: rgba(74, 107, 172, 0.15);
+        }
+        .prize-section h3 {
+            color: #2c4a7a;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .prize-section h3 i {
+            margin-right: 10px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #4a6bac, #2c4a7a);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #3a5a9c, #1a2c4e);
+            box-shadow: 0 5px 15px rgba(74, 107, 172, 0.4);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.8);
+            color: #2c4a7a;
+            border: 1px solid #2c4a7a;
+        }
+        .btn-secondary:hover {
+            background: rgba(74, 107, 172, 0.1);
+            transform: translateY(-2px);
+        }
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 0;
+            }
+            .logo {
+                margin-bottom: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            nav li {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+            .dropdown-content {
+                transform: none;
+                left: 0;
+                right: 0;
+                min-width: auto;
+            }
+            .eventpage-container {
+                padding: 15px;
+            }
+            .eventpage-title {
+                font-size: 1.8rem;
+            }
+            .eventpage-subtitle {
+                font-size: 1.1rem;
+            }
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .section-card {
+                padding: 20px;
+            }
+            .lecture-title {
+                font-size: 1.3rem;
+            }
+            .speaker-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .speaker-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .speaker-name {
+                font-size: 1.3rem;
+            }
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .info-box {
+                padding: 20px;
+                margin: 15px 0;
+            }
+            .content-section h3 {
+                font-size: 1.1rem;
+            }
+            .time-location-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .time-location-item i {
+                margin-bottom: 5px;
+            }
+            .preview-link {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .eventpage-title {
+                font-size: 1.5rem;
+            }
+            .eventpage-subtitle {
+                font-size: 1rem;
+            }
+            .section-card {
+                padding: 15px;
+            }
+            .info-box {
+                padding: 15px;
+            }
+            .speaker-badges {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .speaker-badge {
+                width: fit-content;
+            }
+            .lecture-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../../assets/images/MITA_Logo.png" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <h1 style="color: #2c4a7a; font-size: 1.5rem;">数学与智能科技协会</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
+                    <li><a href="../社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
+                    <li><a href="../项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
+                    <li><a href="../加入MITA.html"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
+                    <li><a href="../邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="../微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://space.bilibili.com/3546981368596533?spm_id_from=333.337.0.0"><i class="fa-brands fa-bilibili"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-zhihu"></i></a></li>
+                    <li class="dropdown">
+                        <a href="#">更多 <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
+                            <a href="../管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
+                            <a href="../许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
+                            <a href="#"><i class="fa-solid fa-language"></i>&ensp;English</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="eventpage-container">
+            <div class="eventpage-header">
+                <h1 class="eventpage-title">25-26&#8239;“花梨杯”数学竞赛</h1>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-info"></i> 活动简介</h3>
+                <p>"花梨杯"数学竞赛是由 <strong>MITA 数学与智能科技协会</strong> 举办的数学类竞赛，参与竞赛可获得&#8239;MITA&#8239;积分，进入决赛更有丰厚奖品！</p>
+                <ul>
+                    <li>该活动面向全校本科生开放</li>
+                    <li>该活动由学术部负责</li>
+                </ul>
+            </div>
+            <h2 class="section-title"><i class="fa-solid fa-medal"></i> I&#8239;组&#8239;初赛</h2>
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-user-check"></i> 参赛方式</h3>
+                        <p>在规定时间内提交作答至&#8239;MITA&#8239;赛事邮箱&#8239;mita_event@126.com&#8239;即可</p>
+                    </div>
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-gamepad"></i> 比赛时间</h3>
+                        <ul class="features-list">
+                            <li>每周五&#8239;18:00&#8239;于社团总群内发布&#8239;A/B&#8239;组赛题各一道</li>
+                            <li>参赛者可在下个周五&#8239;12:00&#8239;前将&#8239;<strong>姓名、学号和作答内容</strong>&#8239;提交至赛事邮箱&#8239;mita_event@126.com</li>
+                            <li>周日&#8239;18:00&#8239;前一旦有参赛者成功解答&#8239;B&#8239;组赛题，则继续发布&#8239;C&#8239;组赛题</li>
+                            <li>参赛者可使用已结算赛季中获得的积分兑换奖品</li>
+                        </ul>
+                    </div>
+                    <div class="season-section">
+                        <h3><i class="fa-solid fa-clock"></i> 赛季安排</h3>
+                        <div class="season-list">
+                            <div class="season-item">
+                                <div class="season-name">Cauchy&#8239;赛季</div>
+                                <div class="season-date">2025.10.17～2025.11.07</div>
+                            </div>
+                            <div class="season-item">
+                                <div class="season-name">Leibniz&#8239;赛季</div>
+                                <div class="season-date">2025.11.07～2025.11.28</div>
+                            </div>
+                            <div class="season-item">
+                                <div class="season-name">Riemann&#8239;赛季</div>
+                                <div class="season-date">2025.11.28～2025.12.19</div>
+                            </div>
+                            <div class="season-item">
+                                <div class="season-name">Fourier&#8239;赛季</div>
+                                <div class="season-date">2026.03.13～2026.04.03</div>
+                            </div>
+                            <div class="season-item">
+                                <div class="season-name">Stokes&#8239;赛季</div>
+                                <div class="season-date">2026.04.03～2026.04.24</div>
+                            </div>
+                            <div class="season-item">
+                                <div class="season-name">Poincaré&#8239;赛季</div>
+                                <div class="season-date">2026.04.24～2026.05.15</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prize-section">
+                        <h3><i class="fa-solid fa-gift"></i> 常规赛奖池</h3>
+                        <ul class="features-list">
+                            <li>MITA&#8239;数学手册&#8239;<sub>2025秋/2026春</sub></li>
+                            <li>MITA&#8239;书签&#8239;<sub>Formula系列</sub></li>
+                            <li>MITA&#8239;书签&#8239;<sub>Constant系列</sub></li>
+                            <li>MITA&#8239;书签&#8239;<sub>Mathematician系列</sub></li>
+                            <li>MITA&#8239;钥匙圈</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section-title"><i class="fa-solid fa-medal"></i> 季后赛</h2>
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-user-check"></i> 参赛方式</h3>
+                        <p>加入季后赛群并修改群昵称为“姓名+学号”形式即视为参赛（群号将于&#8239;Euler&#8239;赛季开始前约&#8239;10&#8239;天公布）</p>
+                    </div>
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-gamepad"></i> 比赛规则</h3>
+                        <ul class="features-list">
+                            <li>每日&#8239;12:00&#8239;于季后赛群内发布&#8239;A/B/C&#8239;组赛题各一道</li>
+                            <li>参赛者可于当日&#8239;20:00&#8239;至次日&#8239;12:00&#8239;在季后赛群内发布作答内容并获得相应积分，早于&#8239;20:00&#8239;发布作答内容将&#8239;<strong>无法获得</strong>&#8239;当日积分</li>
+                            <li>参赛者可使用已结算赛季中获得的积分兑换奖品</li>
+                        </ul>
+                    </div>
+                    <div class="season-section">
+                        <h3><i class="fa-solid fa-clock"></i> 赛季安排</h3>
+                        <div class="season-list">
+                            <div class="season-item">
+                                <div class="season-name">Euler&#8239;赛季</div>
+                                <div class="season-date">2026.01.25～2026.02.14</div>
+                            </div>
+                            <div class="season-item">
+                                <div class="season-name">Gauss&#8239;赛季</div>
+                                <div class="season-date">2026.07.19～2026.08.28</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prize-section">
+                        <h3><i class="fa-solid fa-gift"></i> 季后赛奖池</h3>
+                        <ul class="features-list">
+                            <li>“名人杯”数学挑战赛奖状</li>
+                            <li>MITA&#8239;“名人杯”数学挑战赛记录册&#8239;<sub>2025.10.27～2026.08.28</sub></li>
+                            <li>MITA&#8239;数学手册&#8239;<sub>2026</sub></li>
+                            <li>MITA&#8239;数学手册&#8239;<sub>2025冬/2026夏</sub></li>
+                            <li>MITA&#8239;书签&#8239;<sub>Formula系列</sub></li>
+                            <li>MITA&#8239;书签&#8239;<sub>Constant系列</sub></li>
+                            <li>MITA&#8239;书签&#8239;<sub>Mathematician系列</sub></li>
+                            <li>MITA&#8239;钥匙圈</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-lightbulb"></i> 积分规则</h3>
+                <ul>
+                    <li>提供解答方案越多，获得积分越多</li>
+                    <li>使用&#8239;Markdown、$\LaTeX$&#8239;或其他基于&#8239;$\TeX$&#8239;的公式编辑器作答可获得附加积分（$\TeX$&#8239;通识讲座第一讲后开始）</li>
+                    <li>季后赛各组赛题基础积分分别为：A&#8239;1、B&#8239;2、C&#8239;3，当日&#8239;20:00～20:05&#8239;上传作答内容可获得&#8239;3&#8239;倍积分</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-egg"></i> 彩蛋</h3>
+                <p>“花梨杯”数学竞赛&#8239;I&#8239;中将出现常规赛题库的原题</p>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-question"></i> 联系方式</h3>
+                <p>负责人：周可信（学术部）jokerxin@126.com</p>
+            </div>
+        </main>
+        <footer>
+            <p>© 2025 MITA 数学与智能科技协会</p>
+        </footer>
+    </div>
+</body>
+</html>

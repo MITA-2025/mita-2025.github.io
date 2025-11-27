@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>MITA | 学习伙伴匹配活动</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MITA's Website Style -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../../assets/css/eventpage.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
+    <!-- KaTeX -->
+    <script defer src="../../assets/js/KaTeX.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        .project-features {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        .project-features h3 {
+            color: #2c4a7a;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .project-features h3 i {
+            margin-right: 10px;
+        }
+        .process-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .process-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 74, 122, 0.1);
+            text-align: center;
+        }
+        .process-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(44, 74, 122, 0.2);
+        }
+        .process-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2c4a7a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 auto 10px;
+        }
+        .process-name {
+            font-weight: 600;
+            color: #2c4a7a;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        .process-desc {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .feature-section {
+            margin-top: 15px;
+            padding: 20px;
+            background: rgba(74, 107, 172, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #4a6bac;
+            transition: all 0.3s ease;
+        }
+        .feature-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background: rgba(74, 107, 172, 0.15);
+        }
+        .feature-section h3 {
+            color: #2c4a7a;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .feature-section h3 i {
+            margin-right: 10px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 74, 122, 0.1);
+            text-align: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(44, 74, 122, 0.2);
+        }
+        .feature-icon {
+            color: #2c4a7a;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .feature-title {
+            font-weight: 600;
+            color: #2c4a7a;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #718096;
+            line-height: 1.5;
+        }
+        .btn {
+            margin: 30px auto;
+            text-align: center;
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            background: linear-gradient(45deg, #4a6bac, #2c4a7a);
+            color: white;
+        }
+        .btn:hover {
+            background: linear-gradient(45deg, #3a5a9c, #1a2c4e);
+            box-shadow: 0 5px 15px rgba(74, 107, 172, 0.4);
+            transform: translateY(-2px);
+        }
+        .info-list-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .info-list-column {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 74, 122, 0.1);
+        }
+        .info-list-column:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .info-list-column h4 {
+            color: #2c4a7a;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(44, 74, 122, 0.2);
+        }
+        .item:before {
+            left: -10px;
+            padding-left: 15px;
+            position: relative;
+            content: "•";
+        }
+        .item-public:before {
+            color: #1b8a3a;
+        }
+        .item-private:before {
+            color: #e53e3e;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 0;
+            }
+            .logo {
+                margin-bottom: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            nav li {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+            .dropdown-content {
+                transform: none;
+                left: 0;
+                right: 0;
+                min-width: auto;
+            }
+            .eventpage-container {
+                padding: 15px;
+            }
+            .eventpage-title {
+                font-size: 1.8rem;
+            }
+            .eventpage-subtitle {
+                font-size: 1.1rem;
+            }
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .section-card {
+                padding: 20px;
+            }
+            .process-list, .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .info-box {
+                padding: 20px;
+                margin: 15px 0;
+            }
+            .content-section h3 {
+                font-size: 1.1rem;
+            }
+            .info-list-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .eventpage-title {
+                font-size: 1.5rem;
+            }
+            .eventpage-subtitle {
+                font-size: 1rem;
+            }
+            .section-card {
+                padding: 15px;
+            }
+            .info-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../../assets/images/MITA_Logo.png" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <h1 style="color: #2c4a7a; font-size: 1.5rem;">数学与智能科技协会</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
+                    <li><a href="../社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
+                    <li><a href="../项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
+                    <li><a href="../加入MITA.html"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
+                    <li><a href="../邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="../微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://space.bilibili.com/3546981368596533?spm_id_from=333.337.0.0"><i class="fa-brands fa-bilibili"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-zhihu"></i></a></li>
+                    <li class="dropdown">
+                        <a href="#">更多 <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../组织架构.html"><i class="fa-solid fa-network-wired"></i>&ensp;组织架构</a>
+                            <a href="../管理文档.html"><i class="fa-solid fa-landmark"></i>&ensp;管理文档</a>
+                            <a href="../许可协议.html"><i class="fa-solid fa-scale-balanced"></i>&ensp;许可协议</a>
+                            <a href="#"><i class="fa-solid fa-language"></i>&ensp;English</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="eventpage-container">
+            <div class="eventpage-header">
+                <h1 class="eventpage-title">Pair-up! 寻找你的学习伙伴</h1>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-info"></i> 活动简介</h3>
+                <p>&#8239;<strong>Pair-up! 寻找你的学习伙伴</strong> 是由 <strong>MITA 数学与智能科技协会</strong> 举办的互助学习活动，让学习不再孤单！</p>
+                <ul>
+                    <li>该活动面向所有华东理工大学（奉贤校区）在校本科生</li>
+                    <li>该活动由各部门协同负责</li>
+                </ul>
+            </div>
+            <h2 class="section-title"><i class="fa-solid fa-star"></i> 活动详情</h2>
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-user-check"></i> 参与条件</h3>
+                        <p>当前为华东理工大学（奉贤校区）在校本科生</p>
+                    </div>
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-location-crosshairs"></i> 匹配需求</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon"><i class="fa-solid fa-user-plus"></i></div>
+                                <div class="feature-title">拓展人脉</div>
+                                <div class="feature-desc">结识学习伙伴，扩大学术社交圈</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                                <div class="feature-title">学习互助</div>
+                                <div class="feature-desc">寻求帮助或提供帮助</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <div class="feature-title">协同进步</div>
+                                <div class="feature-desc">互相监督，提高学习效率</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-chart-diagram"></i></i> 活动流程</h3>
+                        <div class="process-list">
+                            <div class="process-item">
+                                <div class="process-number">1</div>
+                                <div class="process-name">填写信息</div>
+                                <div class="process-desc">提供基本信息和学习偏好</div>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-number">2</div>
+                                <div class="process-name">设置筛选</div>
+                                <div class="process-desc">选择最多三项匹配条件</div>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-number">3</div>
+                                <div class="process-name">智能匹配</div>
+                                <div class="process-desc">算法为您寻找最佳学习伙伴</div>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-number">4</div>
+                                <div class="process-name">获取结果</div>
+                                <div class="process-desc">通过邮件获取匹配结果</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-features">
+                        <h3><i class="fa-solid fa-list-check"></i> 待填信息项</h3>
+                        <div class="info-list-grid">
+                            <div class="info-list-column">
+                                <h4>基本信息（必填）</h4>
+                                <div class="item item-private">姓名</div>
+                                <div class="item item-public">性别</div>
+                                <div class="item item-public">学院</div>
+                                <div class="item item-private">学号</div>
+                                <div class="item item-private">手机号</div>
+                                <div class="item item-private">电子邮箱</div>
+                                <div class="item item-public">需求类型</div>
+                            </div>
+                            <div class="info-list-column">
+                                <h4>补充信息（可选）</h4>
+                                <div class="item item-public">是否所有数学类课程平均总评90+（或具有同等水平）</div>
+                                <div class="item item-public">是否英语四级考试（或具有同等水平）</div>
+                                <div class="item item-public">是否愿意线下自习</div>
+                                <div class="item item-public">空闲时段</div>
+                                <div class="item item-public">未来学术/升学类考试竞赛规划</div>
+                            </div>
+                            <p>注：绿色表示可以作为匹配条件的信息项</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-question"></i> 报名须知</h3>
+                <ul>
+                    <li>请勿填写虚假个人信息</li>
+                    <li>建议参与活动较晚的同学在高优先级筛选条件中选择可匹配范围较大的信息项（如性别）以防止匹配失败</li>
+                    <li>若匹配失败，则 MITA 将赠送一份精美礼品作为补偿（具体形式见邮件通知）</li>
+                </ul>
+            </div>
+            <a href="pages/学习伙伴匹配报名.html" class="btn">
+                <i class="fa-solid fa-pen-to-square"></i> 立即参与匹配
+            </a>
+        </main>
+        <footer>
+            <p>© 2025 MITA 数学与智能科技协会</p>
+        </footer>
+    </div>
+</body>
+</html>
