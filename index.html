@@ -38,7 +38,7 @@
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            gap: 45px;
             width: 100%;
             max-width: 1200px;
             margin-top: 30px;
@@ -113,6 +113,16 @@
             right: 0%;
             transform: rotate(-10deg) scale(0.8);
         }
+        @media (min-width: 1024px) {
+            .projects {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .projects {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -172,6 +182,27 @@
             <h1 class="main-title">MITA 数学与智能科技协会</h1>
             <p class="main-subtitle">数学是一种工具、一门语言、一件艺术品</p>
             <div class="projects">
+            <a href="pages/2025-2026/25-26“花梨杯”数学竞赛.html" class="card-link">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3 class="project-title">25-26“花梨杯”数学竞赛</h3>
+                    <p class="project-desc">了解更多</p>
+                </div>
+            </a>
+            <a href="pages/2025-2026/Pair-up! 寻找你的学习搭档.html" class="card-link">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-user-group"></i></i></div>
+                    <h3 class="project-title">Pair-up! 寻找你的学习搭档</h3>
+                    <p class="project-desc">立即参与</p>
+                </div>
+            </a>
+            <a href="pages/2025-2026/25-26“名人杯”数学挑战赛.html" class="card-link">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-medal"></i></div>
+                    <h3 class="project-title">25-26&#8239;“名人杯”数学挑战赛</h3>
+                    <p class="project-desc">2025.10.17～2026.08.28</p>
+                </div>
+            </a>
             <a href="pages/2025-2026/TeX通识系列讲座2025.html" class="card-link">
                 <div class="project-card">
                     <div class="project-icon"><i class="fa-solid fa-pen-nib"></i></div>
@@ -184,13 +215,6 @@
                     <div class="project-icon"><i class="fa-solid fa-users"></i></div>
                     <h3 class="project-title">MITA&#8239;骨干招募</h3>
                     <p class="project-desc">了解更多</p>
-                </div>
-            </a>
-            <a href="pages/2025-2026/25-26“名人杯”数学挑战赛.html" class="card-link">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fa-solid fa-trophy"></i></div>
-                    <h3 class="project-title">25-26&#8239;“名人杯”数学挑战赛</h3>
-                    <p class="project-desc">2025.10.17～2026.08.28</p>
                 </div>
             </a>
             </div>
