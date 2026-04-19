@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>MITA | 活动剪影</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MITA's Website Style -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../assets/css/mainpage.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/22e1239b05.js" crossorigin="anonymous"></script>
+    <!-- KaTeX -->
+    <script defer src="../assets/js/KaTeX.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(44, 74, 122, 0.2);
+            color: #2c4a7a;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(45deg, #4a6bac, #2c4a7a);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(44, 74, 122, 0.3);
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .photo-grid a {
+            text-decoration: none !important;
+        }
+        .photo-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-card.hide {
+            display: none;
+        }
+        .photo-card.show {
+            animation: fadeInCard 0.5s ease forwards;
+        }
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(44, 74, 122, 0.15);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .photo-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        .photo-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .photo-card:hover .photo-img-wrapper img {
+            transform: scale(1.1);
+        }
+        .photo-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c4a7a;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            z-index: 2;
+        }
+        .photo-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-title {
+            font-size: 1.2rem;
+            color: #2c4a7a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .photo-desc {
+            color: #4a5568;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .photo-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            color: #718096;
+            font-size: 0.85rem;
+        }
+        .photo-meta i {
+            margin-right: 5px;
+            color: #4a6bac;
+        }
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .gallery-filter {
+                gap: 10px;
+            }
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../assets/images/MITA_Logo.png" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <h1 style="color: #2c4a7a; font-size: 1.5rem;">数学与智能科技协会</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html"><i class="fa-solid fa-home"></i>&ensp;主页</a></li>
+                    <li><a href="社团介绍.html"><i class="fa-solid fa-info"></i>&ensp;社团介绍</a></li>
+                    <li><a href="#" class="current"><i class="fa-regular fa-images"></i>&ensp;活动剪影</a></li>
+                    <li><a href="项目资源.html"><i class="fa-regular fa-folder-closed"></i>&ensp;项目资源</a></li>
+                    <li><a href="加入MITA.html"><i class="fa-brands fa-qq"></i>&ensp;加入&#8239;MITA</a></li>
+                    <li><a href="邮箱.html"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="微信公众号.html"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="https://github.com/MITA-2025"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://space.bilibili.com/3546981368596533"><i class="fa-brands fa-bilibili"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="mainpage-header">
+            <h1 class="mainpage-title">社团风采</h1>
+            <p class="mainpage-subtitle">光影流转 定格每一次智慧的碰撞与探索的脚步</p>
+        </div>
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">全部活动</button>
+            <button class="filter-btn" data-filter="学术讲座">学术讲座</button>
+            <button class="filter-btn" data-filter="团建日常">团建日常</button>
+            <button class="filter-btn" data-filter="趣味竞赛">趣味竞赛</button>
+        </div>
+        <div class="photo-grid">
+            <a href="活动剪影.show.html" class="photo-card" data-category="学术讲座" data-folder="数学建模入门讲座" data-count="9">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">学术讲座</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/数学建模入门讲座/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">数学建模入门讲座</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2024-11-15</span>
+                        <span><i class="fa-solid fa-location-dot"></i>奉贤校区&#8239;C308</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="学术讲座" data-folder="MITA&物理学会 数理竞赛讲座" data-title="MITA&#8239;&&#8239;物理学会 数理竞赛讲座" data-count="4">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">学术讲座</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/MITA&物理学会 数理竞赛讲座/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">MITA&#8239;&&#8239;物理学会 数理竞赛讲座</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2025-11-04</span>
+                        <span><i class="fa-solid fa-location-dot"></i>奉贤校区&#8239;C206</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="团建日常" data-folder="“百团大战”招新活动" data-count="5">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">团建日常</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/“百团大战”招新活动/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">“百团大战”招新活动</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2025-10-14</span>
+                        <span><i class="fa-solid fa-location-dot"></i>奉贤校区一食堂门口</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="学术讲座" data-folder="TeX与Markdown入门讲座" data-title="$\TeX$&#8239;与&#8239;Markdown&#8239;入门讲座" data-count="6">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">学术讲座</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/TeX与Markdown入门讲座/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">$\TeX$&#8239;与&#8239;Markdown&#8239;入门讲座</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2025-10-26</span>
+                        <span><i class="fa-solid fa-location-dot"></i>奉贤校区&#8239;C106</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="团建日常" data-folder="MITA团建——2026清明踏青" data-title="MITA&#8239;团建&#8239;—&#8239;2026&#8239;清明踏青" data-count="9">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">团建日常</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/MITA团建——2026清明踏青/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">MITA&#8239;团建&#8239;—&#8239;2026&#8239;清明踏青</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2026-04-04</span>
+                        <span><i class="fa-solid fa-location-dot"></i>上海科技馆&#8239;&&#8239;世纪公园</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="团建日常" data-folder="202601-202604答疑精选" data-title="202601&#8239;-&#8239;202604&#8239;答疑精选" data-count="9">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">团建日常</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/202601-202604答疑精选/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">202601&#8239;-&#8239;202604&#8239;答疑精选</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2026</span>
+                        <span><i class="fa-solid fa-location-dot"></i>QQ&#8239;总群</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="学术讲座" data-folder="数学建模Q&A" data-title="数学建模&#8239;Q&A" data-count="4">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">学术讲座</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/数学建模Q&A/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">数学建模&#8239;Q&A</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2025-12-09</span>
+                        <span><i class="fa-solid fa-location-dot"></i>奉贤校区&#8239;D106</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="趣味竞赛" data-folder="25-26“花梨杯”数学竞赛" data-title="25-26&#8239;“花梨杯”数学竞赛" data-count="5">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">趣味竞赛</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/25-26“花梨杯”数学竞赛/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">25-26&#8239;“花梨杯”数学竞赛</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2026-03-14</span>
+                        <span><i class="fa-solid fa-location-dot"></i>奉贤校区&#8239;C104</span>
+                    </div>
+                </div>
+            </a>
+            <a href="活动剪影.show.html" class="photo-card" data-category="学术讲座" data-folder="算法竞赛入门讲座" data-count="6">
+                <div class="photo-img-wrapper">
+                    <span class="photo-category">学术讲座</span>
+                    <img src="https://gitee.com/MITA-2025/MITA_Resource/raw/master/活动剪影/算法竞赛入门讲座/1.jpg">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">算法竞赛入门讲座</h3>
+                    <div class="photo-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i>2025-12-20</span>
+                        <span><i class="fa-solid fa-location-dot"></i>奉贤校区&#8239;C108</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <footer>
+            <p>© 2025 MITA 数学与智能科技协会</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                const searchParams = new URLSearchParams();
+                searchParams.set('folder', card.dataset.folder);
+                searchParams.set('count', card.dataset.count);
+                if (card.dataset.title) {
+                    searchParams.set('title', card.dataset.title);
+                }
+                card.href = `活动剪影.show.html?${searchParams.toString()}`;
+            });
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // 1. 移除所有按钮的 active 状态，并为当前点击的按钮添加 active
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    // 2. 获取当前点击按钮的过滤类别
+                    const filterValue = button.getAttribute('data-filter');
+                    // 3. 遍历所有卡片进行匹配
+                    photoCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        // 先移除动画类，以便后续重新触发动画
+                        card.classList.remove('show');
+                        if (filterValue === 'all' || filterValue === cardCategory) {
+                            card.classList.remove('hide');
+                            // 技巧：触发浏览器重绘 (Reflow) 以重置 CSS 动画
+                            void card.offsetWidth; 
+                            // 添加进入动画
+                            card.classList.add('show');
+                        } else {
+                            card.classList.add('hide');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
